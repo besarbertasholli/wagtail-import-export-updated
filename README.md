@@ -56,3 +56,6 @@ Page references within rich text or StreamField content will not be rewritten to
 Imports are processed in tree path order; first the base `Page` records are imported, followed by the data for specific page subclasses. If a model is imported which includes a foreign key to a specific subclass of `Page`, and the target page of that foreign key appears in the import but later in tree path order, this will fail with an integrity error (as the relevant record will not have been created at that point).
 
 Non-page data, such as images, documents or snippets, is not included in the import; the user is responsible for ensuring that any objects referenced from imported pages are already present on the destination site (with matching IDs).
+
+## Credits
+This project is based on [torchbox/wagtail-import-export](https://github.com/torchbox/wagtail-import-export). Because they use the same Django application name, both cannot be used on the same project at the same time.
