@@ -1,12 +1,8 @@
-:warning: **This project is no longer maintained.**
-
-For an up-to-date and more powerful solution, please consider https://github.com/wagtail/wagtail-transfer
+Import/Export for Wagtail CMS pages, images and documents. Maintained for usability with new versions of Django/Wagtail.
 
 
-
-
-# wagtail-import-export
-Page export from one Wagtail instance into another.
+# wagtail-import-export-updated
+Import and export from CSV, JSON and API.
 
 A published page and its published descendants can be exported via API or file from a source site and imported into a destination site under an existing page.
 
@@ -14,7 +10,7 @@ The destination site should have the same page models as the source site, with c
 
 ## Installation
 
-    pip install wagtail-import-export
+    pip install wagtail-import-export-updated
 
 Now add to your project's `INSTALLED_APPS`:
 
