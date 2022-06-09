@@ -1,5 +1,6 @@
-Import/Export for Wagtail CMS pages, images and documents. Maintained for usability with new versions of Django/Wagtail.
+Import/Export for Wagtail CMS pages, images and documents. Only forked and updated for usability with new versions of Django/Wagtail, as original library from torchbox has not been edited since Apr 2019.
 
+For an up-to-date and more powerful solution (focused on allowing content to be transferred between multiple instances of a Wagtail project), please consider https://github.com/wagtail/wagtail-transfer
 
 # wagtail-import-export-updated
 Import and export from CSV, JSON and API.
