@@ -4,7 +4,7 @@ import re
 from django.http import JsonResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse
-from django.utils.translation import ungettext, ugettext_lazy as _
+from django.utils.translation import ngettext, gettext_lazy as _
 
 import requests
 
@@ -46,7 +46,7 @@ def import_from_api(request):
                     "Import failed: %(reason)s") % {'reason': e}
                 )
             else:
-                messages.success(request, ungettext(
+                messages.success(request, ngettext(
                     "%(count)s page imported.",
                     "%(count)s pages imported.",
                     page_count) % {'count': page_count}
@@ -82,7 +82,7 @@ def import_from_file(request):
                     "Import failed: %(reason)s") % {'reason': e}
                 )
             else:
-                messages.success(request, ungettext(
+                messages.success(request, ngettext(
                     "%(count)s page imported.",
                     "%(count)s pages imported.",
                     page_count) % {'count': page_count}
