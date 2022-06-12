@@ -1,5 +1,5 @@
 from django import forms
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext as _
 
 from wagtailimportexport.compat import AdminPageChooser, Page, WAGTAIL_VERSION_2_OR_GREATER
 
