@@ -3,12 +3,12 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='wagtail-import-export',
-    version='0.2',
-    description="Page export from one Wagtail instance into another",
-    author='Torchbox and NHS Digital',
-    author_email='hello@torchbox.com',
-    url='https://github.com/torchbox/wagtail-import-export',
+    name='wagtail-import-export-updated',
+    version='0.1',
+    description="Import/Export for Wagtail CMS pages, images and documents.",
+    author='Besarber Tasholli',
+    author_email='besarbertasholli@hotmail.com',
+    url='https://github.com/besarbertasholli/wagtail-import-export-updated',
     packages=find_packages(),
     include_package_data=True,
     license='BSD',
