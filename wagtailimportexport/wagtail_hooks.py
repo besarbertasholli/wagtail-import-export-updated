@@ -1,6 +1,6 @@
 from django.conf.urls import include, url
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from wagtailimportexport import admin_urls
 from wagtailimportexport.compat import hooks, MenuItem
