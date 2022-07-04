@@ -2,14 +2,28 @@
 {% load i18n %}
 {% block titletag %}{% blocktrans %}Import / export pages{% endblocktrans %}{% endblock %}
 {% block content %}
-    {% trans "Import / export pages" as title_str %}
-    {% include "wagtailadmin/shared/header.html" with title=title_str icon="download" %}
+{% trans "Import / export pages" as title_str %}
+{% include "wagtailadmin/shared/header.html" with title=title_str icon="download" %}
 
-    <div class="nice-padding">
-        <ul>
-            <li><a href="{% url 'wagtailimportexport_admin:import_from_api' %}">{% trans "Import from API" %}</a></li>
-            <li><a href="{% url 'wagtailimportexport_admin:import_from_file' %}">{% trans "Import from file" %}</a></li>
-            <li><a href="{% url 'wagtailimportexport_admin:export_to_file' %}">{% trans "Export to file" %}</a></li>
-        </ul>
-    </div>
+<div class="nice-padding">
+
+    </br>
+    </br>
+    {% url 'wagtailimportexport_admin:import_from_api' as import_from_api_url %}
+    <a href="{{ import_from_api_url }}" class="button">{% trans "Import from API" %}</a>
+    </br>
+    </br>
+    </br>
+
+    {% url 'wagtailimportexport_admin:import_from_file' as import_from_file_url %}
+    <a href="{{ import_from_file_url }}" class="button">{% trans "Import from file" %}</a>
+    </br>
+    </br>
+    </br>
+
+    {% url 'wagtailimportexport_admin:export_to_file' as export_to_file_url %}
+    <a href="{{ export_to_file_url }}" class="button">{% trans "Export to file" %}</a>
+
+</div>
+
 {% endblock %}
