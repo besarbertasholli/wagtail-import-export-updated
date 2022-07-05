@@ -1,5 +1,9 @@
+import django
 from django import forms
-from django.utils.translation import gettext as _
+if django.VERSION >= (3, 0):
+    from django.utils.translation import gettext as _
+else:
+    from django.utils.translation import ugettext as _
 
 from wagtailimportexport.compat import AdminPageChooser, Page, WAGTAIL_VERSION_2_OR_GREATER
 
