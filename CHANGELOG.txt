@@ -1,7 +1,11 @@
 Changelog
 =========
 
-0.1 (12.06.2022)
+0.1.1 (05.07.2022)
+~~~~~~~~~~~~~~~~
+ * Added checks for Django version methods
+
+0.1 (04.07.2022)
 ~~~~~~~~~~~~~~~~
  * Change deprecated ugettext_lazy, ugettext and ungettext methods in Django 4 to respective new substitutes
 
