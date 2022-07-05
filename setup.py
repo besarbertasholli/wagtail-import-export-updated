@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='wagtail-import-export-updated',
-    version='0.1',
+    version='0.1.1',
     description="Import/Export for Wagtail CMS pages, images and documents.",
     author='Besarber Tasholli',
     author_email='besarbertasholli@hotmail.com',
