@@ -1,5 +1,4 @@
 import requests
-import django
 import json
 import re
 
@@ -7,12 +6,12 @@ from django.http import JsonResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse
 
-if django.VERSION >= (3, 0):
-    from django.utils.translation import ngettext as ngettext, gettext_lazy as _
-else:
-    from django.utils.translation import ungettext as ngettext, ugettext_lazy as _
-
-from wagtailimportexport.compat import messages, Page
+from wagtailimportexport.compat import (
+    messages,
+    Page,
+    ngettext,
+    gettext_lazy as _
+)
 from wagtailimportexport.exporting import export_pages
 from wagtailimportexport.forms import ExportForm, ImportFromAPIForm, ImportFromFileForm
 from wagtailimportexport.importing import import_pages

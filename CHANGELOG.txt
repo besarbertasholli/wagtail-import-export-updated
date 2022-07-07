@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.1.2 (08.07.2022)
+~~~~~~~~~~~~~~~~
+ * Implemented cleaner solution of Django versions with compat
+
 0.1.1 (05.07.2022)
 ~~~~~~~~~~~~~~~~
  * Added checks for Django version methods
@@ -13,4 +17,3 @@ Changelog
 (02.05.2018)
 ~~~~~~~~~~~~~~~~~~~~
  * Original release from Torchbox
- 

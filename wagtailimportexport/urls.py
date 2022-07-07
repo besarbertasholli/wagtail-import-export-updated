@@ -1,11 +1,7 @@
-import django
 from django.conf import settings
 
-if django.VERSION >= (3, 0):
-    from django.urls import re_path as url_path
-else:
-    from django.conf.urls import url as url_path
 from wagtailimportexport import views
+from wagtailimportexport.compat import url_path
 
 
 app_name = 'wagtailimportexport'
