@@ -1,5 +1,10 @@
 from django.apps import AppConfig
-from wagtailimportexport.compat import gettext_lazy as _
+
+try:
+    from django.utils.translation import gettext_lazy as _
+
+except ImportError:  # fallback for Django < 3.0
+    from django.utils.translation import ugettext_lazy as _
 
 
 class WagtailImportExportAppConfig(AppConfig):
