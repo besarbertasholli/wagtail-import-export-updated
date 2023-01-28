@@ -1,20 +1,23 @@
 Changelog
 =========
 
-0.1.2 (08.07.2022)
+0.1.4 (29.01.2023)
+~~~~~~~~~~~~~~~~
+  * Updated Django url imports to be constantly from django.urls
+
 0.1.3 (08.07.2022)
 ~~~~~~~~~~~~~~~~
- * Implemented cleaner solution of Django versions with compat
+  * Implemented cleaner solution of Django versions with compat
 
 0.1.1 (05.07.2022)
 ~~~~~~~~~~~~~~~~
- * Added checks for Django version methods
+  * Added checks for Django version methods
 
 0.1 (04.07.2022)
 ~~~~~~~~~~~~~~~~
- * Change deprecated ugettext_lazy, ugettext and ungettext methods in Django 4 to respective new substitutes
+  * Change deprecated ugettext_lazy, ugettext and ungettext methods in Django 4 to respective new substitutes
 
 
 (02.05.2018)
 ~~~~~~~~~~~~~~~~~~~~
- * Original release from Torchbox
+  * Original release from Torchbox

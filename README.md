@@ -1,8 +1,9 @@
 # wagtail-import-export-updated
+
 Import/Export for Wagtail CMS pages, images, and documents from CSV, JSON, and API. Forked and updated for usability with new versions of Django/Wagtail, as the original library from Torchbox has not been edited since Apr 2019.
 Improvements in functionality, performance, documentation, views, etc will be published time after time.
 
-For an up-to-date and more powerful solution (focused on allowing content to be transferred between multiple instances of a Wagtail project), please consider https://github.com/wagtail/wagtail-transfer
+For a more powerful solution (focused on allowing content to be transferred between multiple instances of a Wagtail project), consider https://github.com/wagtail/wagtail-transfer
 
 A published page and its published descendants can be exported via API or file from a source site and imported into a destination site under an existing page.
 
@@ -43,8 +44,7 @@ It is possible to export all pages under a source page by adding a setting on th
 
     WAGTAILIMPORTEXPORT_EXPORT_UNPUBLISHED = True
 
-This should *not* be used in a public source site because the API is unauthenticated and would thus expose unpublished content to anyone.
-
+This should _not_ be used in a public source site because the API is unauthenticated and would thus expose unpublished content to anyone.
 
 ## Limitations
 
@@ -57,4 +57,5 @@ Imports are processed in tree path order; first the base `Page` records are impo
 Non-page data, such as images, documents or snippets, is not included in the import; the user is responsible for ensuring that any objects referenced from imported pages are already present on the destination site (with matching IDs).
 
 ## Credits
+
 This project is based on [torchbox/wagtail-import-export](https://github.com/torchbox/wagtail-import-export). Because they use the same Django application name, both cannot be used on the same project at the same time.

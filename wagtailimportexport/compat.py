@@ -16,17 +16,15 @@ except ImportError:  # fallback for Wagtail < 2.0
     WAGTAIL_VERSION_2_OR_GREATER = False
 
 try:
-    from django.urls import re_path as url_path
     from django.utils.translation import (
         ngettext as ngettext,
         gettext as gettext,
-        gettext_lazy as gettext_lazy
+        gettext_lazy as gettext_lazy,
     )
 
 except ImportError:  # fallback for Django < 3.0
-    from django.conf.urls import url as url_path
     from django.utils.translation import (
         ungettext as ngettext,
         ugettext as gettext,
-        ugettext_lazy as gettext_lazy
+        ugettext_lazy as gettext_lazy,
     )
