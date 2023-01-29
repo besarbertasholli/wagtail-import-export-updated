@@ -20,10 +20,10 @@ def import_pages(import_data, parent_page):
     # specific page models, which may require us to rewrite page IDs within foreign keys / rich
     # text / streamfields.
     page_content_type = ContentType.objects.get_for_model(Page)
-    for (i, page_record) in enumerate(import_data['pages']):
+    for (i, page_record) in enumerate(import_data["pages"]):
         # build a base Page instance from the exported content (so that we pick up its title and other
         # core attributes)
-        page = Page.from_serializable_data(page_record['content'])
+        page = Page.from_serializable_data(page_record["content"])
         original_path = page.path
         original_id = page.id
 
@@ -39,21 +39,23 @@ def import_pages(import_data, parent_page):
         else:
             # Child pages are created in the same sibling path order as the
             # source tree because the export is ordered by path
-            parent_path = original_path[:-(Page.steplen)]
+            parent_path = original_path[: -(Page.steplen)]
             pages_by_original_path[parent_path].add_child(instance=page)
 
         pages_by_original_path[original_path] = page
         pages_by_original_id[original_id] = page
 
-    for (i, page_record) in enumerate(import_data['pages']):
+    for (i, page_record) in enumerate(import_data["pages"]):
         # Get the page model of the source page by app_label and model name
         # The content type ID of the source page is not in general the same
         # between the source and destination sites but the page model needs
         # to exist on both.
         # Raises LookupError exception if there is no matching model
-        model = apps.get_model(page_record['app_label'], page_record['model'])
+        model = apps.get_model(page_record["app_label"], page_record["model"])
 
-        specific_page = model.from_serializable_data(page_record['content'], check_fks=False, strict_fks=False)
+        specific_page = model.from_serializable_data(
+            page_record["content"], check_fks=False, strict_fks=False
+        )
         base_page = pages_by_original_id[specific_page.id]
         specific_page.page_ptr = base_page
         specific_page.__dict__.update(base_page.__dict__)
@@ -61,12 +63,14 @@ def import_pages(import_data, parent_page):
         update_page_references(specific_page, pages_by_original_id)
         specific_page.save()
 
-    return len(import_data['pages'])
+    return len(import_data["pages"])
 
 
 def update_page_references(model, pages_by_original_id):
     for field in model._meta.get_fields():
-        if isinstance(field, models.ForeignKey) and issubclass(field.related_model, Page):
+        if isinstance(field, models.ForeignKey) and issubclass(
+            field.related_model, Page
+        ):
             linked_page_id = getattr(model, field.attname)
             try:
                 # see if the linked page is one of the ones we're importing

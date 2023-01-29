@@ -9,14 +9,14 @@ from wagtailimportexport.compat import (
 
 
 admin_page_params = {
-    'can_choose_root': True,
-    'show_edit_link': False,
+    "can_choose_root": True,
+    "show_edit_link": False,
 }
 
 admin_page_export_params = admin_page_params.copy()
 
 if WAGTAIL_VERSION_2_OR_GREATER:
-    admin_page_params['user_perms'] = 'copy_to'
+    admin_page_params["user_perms"] = "copy_to"
 
 
 class ImportFromAPIForm(forms.Form):
@@ -26,7 +26,7 @@ class ImportFromAPIForm(forms.Form):
         queryset=Page.objects.all(),
         widget=AdminPageChooser(**admin_page_params),
         label=_("Destination parent page"),
-        help_text=_("Imported pages will be created as children of this page.")
+        help_text=_("Imported pages will be created as children of this page."),
     )
 
 
@@ -36,7 +36,7 @@ class ImportFromFileForm(forms.Form):
         queryset=Page.objects.all(),
         widget=AdminPageChooser(**admin_page_params),
         label=_("Destination parent page"),
-        help_text=_("Imported pages will be created as children of this page.")
+        help_text=_("Imported pages will be created as children of this page."),
     )
 
 
