@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.1.5 (28.07.2023)
+~~~~~~~~~~~~~~~~
+  * Updated Wagtail imports to work with Wagtail > 4
+
 0.1.4 (29.01.2023)
 ~~~~~~~~~~~~~~~~
   * Updated Django url imports to be constantly from django.urls

@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 
 from setuptools import setup, find_packages
+from wagtailimportexport import __version__
 
 setup(
     name="wagtail-import-export-updated",
-    version="0.1.4",
+    version=__version__,
     description="Import/Export for Wagtail CMS pages, images and documents.",
     author="Besarber Tasholli",
     author_email="besarbertasholli@hotmail.com",

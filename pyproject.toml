@@ -1,0 +1,9 @@
+[tool.black]
+line-length = 90
+
+exclude = '''
+/(
+    | \.venv
+    | venv
+)/
+'''
